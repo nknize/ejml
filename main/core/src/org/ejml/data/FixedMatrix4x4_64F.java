@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2009-2014, Peter Abeles. All Rights Reserved.
+ * Copyright (c) 2009-2013, Peter Abeles. All Rights Reserved.
  *
  * This file is part of Efficient Java Matrix Library (EJML).
  *
@@ -22,6 +22,7 @@ import org.ejml.ops.MatrixIO;
 /**
  * Fixed sized 4 by FixedMatrix4x4_64F matrix.  The matrix is stored as class variables for very fast read/write.  aXY is the
  * value of row = X and column = Y.
+ * <p>DO NOT MODIFY.  Automatically generated code created by GenerateFixedMatrixNxN</p>
  *
  * @author Peter Abeles
  */
@@ -218,6 +219,15 @@ public class FixedMatrix4x4_64F implements FixedMatrix64F {
         return 16;
     }
 
+    public FixedMatrix4_64F getRow(int r) {
+        FixedMatrix4_64F row = new FixedMatrix4_64F();
+        row.set(r, 1, this.get(r, 1));
+        row.set(r, 2, this.get(r, 2));
+        row.set(r, 3, this.get(r, 3));
+        row.set(r, 4, this.get(r, 4));
+        return row;
+    }
+
     @Override
     public <T extends Matrix> T copy() {
         return (T)new FixedMatrix4x4_64F(this);
@@ -235,21 +245,21 @@ public class FixedMatrix4x4_64F implements FixedMatrix64F {
         }
         FixedMatrix4x4_64F o = (FixedMatrix4x4_64F)other;
         return o.a11 == this.a11
-                && o.a12 == this.a12
-                && o.a13 == this.a13
-                && o.a14 == this.a14
-                && o.a21 == this.a21
-                && o.a22 == this.a22
-                && o.a23 == this.a23
-                && o.a24 == this.a24
-                && o.a31 == this.a31
-                && o.a32 == this.a32
-                && o.a33 == this.a33
-                && o.a34 == this.a34
-                && o.a41 == this.a41
-                && o.a42 == this.a42
-                && o.a43 == this.a43
-                && o.a44 == this.a44;
+            && o.a12 == this.a12
+            && o.a13 == this.a13
+            && o.a14 == this.a14
+            && o.a21 == this.a21
+            && o.a22 == this.a22
+            && o.a23 == this.a23
+            && o.a24 == this.a24
+            && o.a31 == this.a31
+            && o.a32 == this.a32
+            && o.a33 == this.a33
+            && o.a34 == this.a34
+            && o.a41 == this.a41
+            && o.a42 == this.a42
+            && o.a43 == this.a43
+            && o.a44 == this.a44;
     }
 }
 

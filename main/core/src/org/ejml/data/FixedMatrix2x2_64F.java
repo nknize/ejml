@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2009-2014, Peter Abeles. All Rights Reserved.
+ * Copyright (c) 2009-2013, Peter Abeles. All Rights Reserved.
  *
  * This file is part of Efficient Java Matrix Library (EJML).
  *
@@ -22,6 +22,7 @@ import org.ejml.ops.MatrixIO;
 /**
  * Fixed sized 2 by FixedMatrix2x2_64F matrix.  The matrix is stored as class variables for very fast read/write.  aXY is the
  * value of row = X and column = Y.
+ * <p>DO NOT MODIFY.  Automatically generated code created by GenerateFixedMatrixNxN</p>
  *
  * @author Peter Abeles
  */
@@ -122,6 +123,13 @@ public class FixedMatrix2x2_64F implements FixedMatrix64F {
         return 4;
     }
 
+    public FixedMatrix2_64F getRow(int r) {
+        FixedMatrix2_64F row = new FixedMatrix2_64F();
+        row.set(r, 1, this.get(r, 1));
+        row.set(r, 2, this.get(r, 2));
+        return row;
+    }
+
     @Override
     public <T extends Matrix> T copy() {
         return (T)new FixedMatrix2x2_64F(this);
@@ -139,9 +147,9 @@ public class FixedMatrix2x2_64F implements FixedMatrix64F {
         }
         FixedMatrix2x2_64F o = (FixedMatrix2x2_64F)other;
         return o.a11 == this.a11
-                && o.a12 == this.a12
-                && o.a21 == this.a21
-                && o.a22 == this.a22;
+            && o.a12 == this.a12
+            && o.a21 == this.a21
+            && o.a22 == this.a22;
     }
 }
 

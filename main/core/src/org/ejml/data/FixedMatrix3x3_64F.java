@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2009-2014, Peter Abeles. All Rights Reserved.
+ * Copyright (c) 2009-2013, Peter Abeles. All Rights Reserved.
  *
  * This file is part of Efficient Java Matrix Library (EJML).
  *
@@ -22,6 +22,7 @@ import org.ejml.ops.MatrixIO;
 /**
  * Fixed sized 3 by FixedMatrix3x3_64F matrix.  The matrix is stored as class variables for very fast read/write.  aXY is the
  * value of row = X and column = Y.
+ * <p>DO NOT MODIFY.  Automatically generated code created by GenerateFixedMatrixNxN</p>
  *
  * @author Peter Abeles
  */
@@ -163,6 +164,14 @@ public class FixedMatrix3x3_64F implements FixedMatrix64F {
         return 9;
     }
 
+    public FixedMatrix3_64F getRow(int r) {
+        FixedMatrix3_64F row = new FixedMatrix3_64F();
+        row.set(r, 1, this.get(r, 1));
+        row.set(r, 2, this.get(r, 2));
+        row.set(r, 3, this.get(r, 3));
+        return row;
+    }
+
     @Override
     public <T extends Matrix> T copy() {
         return (T)new FixedMatrix3x3_64F(this);
@@ -180,11 +189,14 @@ public class FixedMatrix3x3_64F implements FixedMatrix64F {
         }
         FixedMatrix3x3_64F o = (FixedMatrix3x3_64F)other;
         return o.a11 == this.a11
-                && o.a12 == this.a12
-                && o.a13 == this.a13
-                && o.a21 == this.a21
-                && o.a22 == this.a22
-                && o.a23 == this.a23;
+            && o.a12 == this.a12
+            && o.a13 == this.a13
+            && o.a21 == this.a21
+            && o.a22 == this.a22
+            && o.a23 == this.a23
+            && o.a31 == this.a31
+            && o.a32 == this.a32
+            && o.a33 == this.a33;
     }
 }
 
